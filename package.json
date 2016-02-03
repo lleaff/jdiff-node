@@ -1,0 +1,23 @@
+{
+  "name": "jdiff-node",
+  "version": "1.0.0",
+  "description": "Node.js bindings to JojoDiff",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lleaff/jdiff-node.git"
+  },
+  "keywords": [
+    "diff",
+    "bsdiff"
+  ],
+  "author": "lleaff",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/lleaff/jdiff-node/issues"
+  },
+  "homepage": "https://github.com/lleaff/jdiff-node#readme"
+}
