@@ -1,4 +1,5 @@
 module.exports = {
     diff: require('./diff'),
-    patch: require('./patch')
+    patch: require('./patch'),
+    patchSeries: require('./patchSeries')
 };
