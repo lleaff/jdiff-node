@@ -7,7 +7,7 @@ module.exports = function patchSeries(origFile, patches, outputFile,
         if (i < patches.length - 1) {
             let tmp = `.${origFile}-tmp${i}~`;
             patch(prev, patches[i], tmp,
-                  series.bind(i + 1, tmp), errCallback);
+                  series.bind(this, i + 1, tmp), errCallback);
         } else {
             patch(prev, patches[i], outputFile, callback, errCallback);
         }
