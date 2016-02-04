@@ -1,5 +1,5 @@
-const path = require('path');
-const spawn = require('child_process').spawn;
+const mkdirp = require('mkdirp');
+const path = require('path');const spawn = require('child_process').spawn;
 
 var jdiffPath = path.join(__dirname, 'jdiff/bin/', process.platform, 'jdiff',
                          process.platform == 'win32' ? '.exe' : '');
@@ -17,6 +17,10 @@ function diff(origFile, targetFile, patchFile, callback, errCallback) {
     }
 
     var args = [origFile, targetFile];
+
+    var destDir = path.dirname(patchFile);
+    if (!fs.accessSync(destDir, fs.W_OK))
+        mkdirp(destDir);
 
     if (patchFile) {
         diffToFile(args, patchFile, callback, errCallback);

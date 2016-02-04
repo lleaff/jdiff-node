@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/lleaff/jdiff-node/issues"
   },
-  "homepage": "https://github.com/lleaff/jdiff-node#readme"
+  "homepage": "https://github.com/lleaff/jdiff-node#readme",
+  "dependencies": {
+    "mkdirp": "^0.5.1"
+  }
 }

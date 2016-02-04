@@ -1,3 +1,4 @@
+const mkdirp = require('mkdirp');
 const path = require('path');
 const spawn = require('child_process').spawn;
 
@@ -17,6 +18,10 @@ function patch(origFile, patchFile, outputFile, callback, errCallback) {
     }
 
     var args = [origFile, patchFile];
+
+    var destDir = path.dirname(outputFile);
+    if (!fs.accessSync(destDir, fs.W_OK))
+        mkdirp(destDir);
 
     if (outputFile) {
         patchToFile(args, outputFile, callback, errCallback);
