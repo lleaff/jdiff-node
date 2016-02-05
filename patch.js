@@ -1,3 +1,4 @@
+const fs = require('fs');
 const mkdirp = require('mkdirp');
 const path = require('path');
 const spawn = require('child_process').spawn;
