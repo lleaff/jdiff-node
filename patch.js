@@ -22,7 +22,7 @@ function patch(origFile, patchFile, outputFile, callback, errCallback) {
 
     var destDir = path.dirname(outputFile);
     if (!fs.accessSync(destDir, fs.W_OK))
-        mkdirp(destDir);
+        mkdirp.sync(destDir);
 
     if (outputFile) {
         patchToFile(args, outputFile, callback, errCallback);

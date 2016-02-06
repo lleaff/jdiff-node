@@ -24,7 +24,7 @@ function diff(origFile, targetFile, patchFile, callback, errCallback) {
         fs.statSync(destDir).isDirectory();
     } catch (e) {
         if (e.code === 'ENOENT')
-            mkdirp(destDir);
+            mkdirp.sync(destDir);
         else
             throw(e);
     }
