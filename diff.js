@@ -20,8 +20,14 @@ function diff(origFile, targetFile, patchFile, callback, errCallback) {
     var args = [origFile, targetFile];
 
     var destDir = path.dirname(patchFile);
-    if (!fs.accessSync(destDir, fs.W_OK))
-        mkdirp(destDir);
+    try {
+        fs.statSync(destDir).isDirectory();
+    } catch (e) {
+        if (e.code === 'ENOENT')
+            mkdirp(destDir);
+        else
+            throw(e);
+    }
 
     if (patchFile) {
         diffToFile(args, patchFile, callback, errCallback);
